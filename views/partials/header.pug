@@ -1,0 +1,13 @@
+div#header
+    nav(class="navbar navbar-expand-lg navbar-dark bg-primary")
+        div(class="collapse navbar-collapse" id="navbarColor01")
+            ul(class="navbar-nav mr-auto")
+                    li(class="nav-item active")
+                        a(class="nav-link" href="/" style="font-size:14px") Home
+                    li(class="nav-item active")
+                    if user 
+                        a(class="nav-link" id="Login" href="/logout" style="font-size:14px") Logout
+                    else
+                         a(class="nav-link" id="Login" href="/login" style="font-size:14px") Login
+                    li(class="nav-item active")
+                        a(class="nav-link" href="/profile" style="font-size:14px") Profile

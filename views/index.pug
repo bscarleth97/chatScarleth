@@ -1,0 +1,44 @@
+extends layout
+
+block content
+  div(class="container searchContainer col-md-4" )
+        br
+        h1= title
+        if user
+           h3.text-center="Welcome to chat "+user.id+" :D"
+           script(type='text/javascript' ).
+               var x=!{JSON.stringify(user)}
+               let dataUser=
+                {
+                  name:x.id,
+                  img:x.photos
+                }
+        else
+          h3.text-center Hi there, unknown person!
+          script(type='text/javascript' ).
+               let dataUser={name:"unknownUser",img:"./images/unknown.jpg"}
+        script(type='text/javascript' ).
+              function callJs()
+              {
+                h=document.querySelector("head");
+                a=document.createElement("script");
+                a.id='pugSide'
+                a.src=`/javascripts/main.js`;
+                h.appendChild(a);
+              }
+              window.addEventListener('load',callJs());
+        br
+        br
+        div(class="form-group")
+           label(for="exampleTextarea" style="font-size:24px") You can see your messages here
+           div(class="card text-white bg-danger mb-3" style="max-width: 30rem;")
+            div(class="card-header") Guten Tag
+            div(class="card-body")
+                 ul(id="list")
+           div(class="search card card-body" style="max-width: 30rem;")
+              div(id="messages")
+              p(class="lead") Write a message to start!!!
+              div(class="modal-footer")
+                input(type="text" class="form-control" id="msgInput"   placeholder="Write a message")
+                button(type="submit"  class="btn btn-success" id="btnMessage" style="font-size:12px") Send
+  footer(class="mt-5 p-3 text-center") Messages by Brenda Scarleth

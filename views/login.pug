@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    div(class='container searchContainer')
+        div(class='search card card-body')
+            h5=t1
+            div(class="card text-white bg-secondary mb-3" style="max-width: 20rem;")
+                div(class="card-body")
+                    div(class='form-group')
+                        input(type='text' class='form-control' id='searchUser'
+                        placeholder='Username') 
+                        input(type='password' class='form-control' id='passwUser' placeholder='Password' pattern='.{6,}')
+                        button(type="submit" id="btnSumbit" class="btn btn-primary" style="font-size:12px") Submit
+                        a.btn.btn-spotify(href="/auth/spotify") Login with Spotify

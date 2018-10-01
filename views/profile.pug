@@ -1,0 +1,16 @@
+extends layout
+
+block content
+ //div#profile.container.full-width
+    h1 Profile
+    img(src=""+user.photos)
+    h3.text-center=user.displayName
+    pre=JSON.stringify(user)
+ div(class='container searchContainer')
+        div(class='search card card-body')
+            h5 Profile
+            div(class="card text-black mb-6" style="max-width: 20rem;")
+                img(src=""+user.photos)
+                div(class="card-body")
+                    h3.text-center=user.id
+                    pre=JSON.stringify(user)
